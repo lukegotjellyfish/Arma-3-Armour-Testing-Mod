@@ -1,0 +1,1 @@
+cfgConvert.exe -bin -dst config.bin config.cpp
