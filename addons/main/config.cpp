@@ -18,7 +18,7 @@ class CfgPatches
 			"rhsusf_sounds",
 			"rhsusf_c_weaponsounds"
 		};
-		version="1";
+		version="1.1";
 		projectname="Neko's armour testing ammo";
 		author="Lukegotjellyfish#0473";
 		ammo[]=
@@ -3040,7 +3040,8 @@ class CfgAmmo
 		caliber=0.079535514;
 		airFriction=0;
 		initSpeed=853;
-		count=1000;
+		typicalSpeed=853;
+		tracersevery=1;
 	};
 	class neko_ammo_2mm_rha: neko_ammo_1mm_rha
 	{
@@ -9051,6 +9052,7 @@ class CfgMagazines
 	class neko_mag_1mm_rha: rhsusf_mag_10Rnd_STD_50BMG_M33
 	{
 		mass=0;
+		count=10000;
 		author="$STR_RHSUSF_AUTHOR_FULL";
 		displayName="1mm RHA";
 		displayNameShort="1mm RHA";
@@ -21052,6 +21054,7 @@ class CfgMagazines
 };
 
 class Mode_SemiAuto;
+class Mode_FullAuto;
 class CfgWeapons
 {
 	class Rifle;
@@ -21071,6 +21074,11 @@ class CfgWeapons
 		class Single: Mode_SemiAuto
 		{
 			dispersion=0;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			dispersion=0;
+			reloadTime=0.075
 		};
 		magazines[]=
 		{
