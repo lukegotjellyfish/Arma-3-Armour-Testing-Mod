@@ -21050,6 +21050,8 @@ class CfgMagazines
 		ammo="neko_ammo_1500mm_rha";
 	};
 };
+
+class Mode_SemiAuto;
 class CfgWeapons
 {
 	class Rifle;
