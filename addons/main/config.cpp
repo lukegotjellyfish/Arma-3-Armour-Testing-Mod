@@ -19,7 +19,7 @@ class CfgPatches
 			"rhsusf_c_weaponsounds"
 		};
 		version="1.1";
-		projectname="Neko's armour testing ammo";
+		projectname="Neko's armour testing ammo 1-1500mm";
 		author="Lukegotjellyfish#0473";
 		ammo[]=
 		{
@@ -3029,6 +3029,7 @@ class CfgPatches
 		};
 	};
 };
+
 class CfgAmmo
 {
 	class B_127x99_Ball;
@@ -21077,8 +21078,23 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class BaseSoundModeType
+			{
+			};
+			class StandardSound: BaseSoundModeType
+			{
+			};
 			dispersion=0;
 			reloadTime=0.075
+		};
+		modes[]=
+		{
+			"Single",
+			"FullAuto"
 		};
 		magazines[]=
 		{
