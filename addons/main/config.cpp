@@ -3032,6 +3032,19 @@ class CfgPatches
 
 class CfgAmmo
 {
+	class B_30mm_APFSDS_Tracer_Red;
+	class rhs_ammo_PGU14B_API: B_30mm_APFSDS_Tracer_Red
+	class rhs_ammo_PGU14B_API: B_30mm_APFSDS_Tracer_Red
+	{
+		airFriction=-0.00072
+	};
+	class Gatling_30mm_HE_Plane_CAS_01_F;
+	class rhs_ammo_PGU13B_HE: Gatling_30mm_HE_Plane_CAS_01_F
+	{
+		airFriction=-0.00072
+	};
+
+
 	class B_127x99_Ball;
 	class rhsusf_ammo_127x99_M33_Ball: B_127x99_Ball
 	{
