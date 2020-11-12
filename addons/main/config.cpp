@@ -3032,17 +3032,12 @@ class CfgPatches
 
 class CfgAmmo
 {
-	class B_30mm_APFSDS_Tracer_Red;
-	class rhs_ammo_PGU14B_API: B_30mm_APFSDS_Tracer_Red
-	class rhs_ammo_PGU14B_API: B_30mm_APFSDS_Tracer_Red
-	{
-		airFriction=-0.00072
-	};
-	class Gatling_30mm_HE_Plane_CAS_01_F;
-	class rhs_ammo_PGU13B_HE: Gatling_30mm_HE_Plane_CAS_01_F
-	{
-		airFriction=-0.00072
-	};
+	// trying to debug gau-8/a ammo having no deceleration
+	// class B_30mm_APFSDS_Tracer_Red;
+	// class rhs_ammo_PGU14B_API: B_30mm_APFSDS_Tracer_Red
+	// {
+	// 	airFriction=-0.0008;
+	// };
 
 
 	class B_127x99_Ball;
@@ -21102,7 +21097,7 @@ class CfgWeapons
 			{
 			};
 			dispersion=0;
-			reloadTime=0.075
+			reloadTime=0.02;
 		};
 		modes[]=
 		{
