@@ -28,25 +28,17 @@ with open("ammoClasses.txt", "w") as _a, open("magClasses.txt", "w") as _m, open
 			_submunitionParameters = ""
 		newCaliber = (t/ammoPenetration) * ammoCaliber
 
-		submunitionAmmoName = "neko_submunitionAmmo_"+str(t)+"mm_rha"
-		_submunitionAmmo += ("class " + submunitionAmmoName + ": " + _submunitionAmmoInherit + "\n" +
-		"{" + "\n" + "	caliber=" + str(newCaliber) + ";" + "\n" +
-		_submunitionParameters +
-		"};\n")
+		submunitionAmmoName = f"neko_submunitionAmmo_{str(t)}mm_rha"
+		_submunitionAmmo += ((((((f"class {submunitionAmmoName}: {_submunitionAmmoInherit}" + "\n" + "{") + "\n") + "	caliber=") + str(newCaliber) + ";") + "\n") + _submunitionParameters) + "};\n"
 
-		ammoName = "neko_ammo_" + str(t) + "mm_rha"
-		_ammo += ("class " + ammoName + ": " + _ammoInherit + "\n" +
-		"{" + "\n" + "	submunitionAmmo=\"" + submunitionAmmoName + "\";" + "\n" +
-		_ammoParameters +
-		"};\n")
 
-		magName = "neko_mag_" + str(t) + "mm_rha"
-		_mag  += ("class " + magName + ": " + _magInherit + "\n" +
-			"{" + "\n" + "	author=\"$STR_RHSUSF_AUTHOR_FULL + Neko\";" + "\n" +
-				"	displayName=\"" + str(t) + "mm RHA\";" + "\n" +
-				"	displayNameShort=\"" + str(t) + "mm RHA\";" + "\n" +
-				"	descriptionShort=\"" + str(t) + "mm RHA\";" + "\n" +
-				"	ammo=\"neko_ammo_" + str(t) + "mm_rha\";\n};\n")
+		ammoName = f"neko_ammo_{str(t)}mm_rha"
+		_ammo += (((((((f"class {ammoName}: {_ammoInherit}" + "\n" + "{") + "\n") + "	submunitionAmmo=\"") + submunitionAmmoName) + "\";") + "\n") + _ammoParameters) + "};\n"
+
+
+		magName = f"neko_mag_{str(t)}mm_rha"
+		_mag += ((((((((((((((f"class {magName}: {_magInherit}" + "\n" + "{") + "\n") + "	author=\"$STR_RHSUSF_AUTHOR_FULL + Neko\";") + "\n") + "	displayName=\"") + str(t) + "mm RHA\";") + "\n") + "	displayNameShort=\"") + str(t) + "mm RHA\";") + "\n") + "	descriptionShort=\"") + str(t) + "mm RHA\";") + "\n") + "	ammo=\"neko_ammo_") + str(t) + "mm_rha\";\n};\n"
+
 
 		ammoDict += "\"" + ammoName + "\",\n"
 		magDict += "\"" + magName + "\",\n"
